@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="signinApp">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous" />
+<link rel="stylesheet" href="/intranet/signin.css" />
+<title>Management Login</title>
+</head>
+<body ng-controller="signinCtl">
+
+<div class="container">
+
+	<form class="form-signin" ng-submit="signin()">
+		<h2 class="form-signin-heading">Please sign in</h2>
+		
+		<label for="inputEmail" class="sr-only">User Name</label>
+		<input type="text" class="form-control" placeholder="User Name" ng-model="user" required autofocus>
+		
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input type="password" class="form-control" placeholder="Password" ng-model="password" required>
+		
+		<div class="has-error" ng-show="errorMessage.length > 0">
+			<span id="helpBlock" class="help-block">{{errorMessage}}</span>
+		</div>
+		
+		<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="isProcessing">Sign in</button>
+	</form>
+
+</div>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="/intranet/signin.js"></script>
+</body>
+</html>

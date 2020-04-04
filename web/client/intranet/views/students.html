@@ -1,0 +1,60 @@
+<style>
+.studentList {
+	padding-right: 0px;
+}
+.studentItem img {
+	display: inline-block;
+	height: 55px;
+	vertical-align: top;
+	border: 2px solid;
+	border-color: #848492;
+	border-radius: 15px;
+}
+.studentContent {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 10px;
+}
+.studentName {
+	font-size: 25px;
+	color: #757575;
+}.studentSchool {
+	font-size: 15px;
+	color: #757575;
+}
+.studentProfile {
+	display: none;
+}
+
+@media (min-width: 768px) {
+.studentProfile {
+	display: block;
+}
+}
+</style>
+
+<div class="container-fluid">
+	<h2 class="sub-header">Students</h2>
+	
+	<div class="row">
+		
+		<div class="col-xs-12 col-sm-5 list-group studentList">
+			<div class="list-group-item studentItem" ng-repeat="student in students | orderBy: 'fullName'">
+				<img src="/global/media/profileman.png" />
+				
+				<div class="studentContent">
+					<div class="studentName">{{student.fullName}}</div>
+					<div class="studentSchool">{{student.school}}</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xs-12 col-sm-6 col-sm-offset-1 studentProfile">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					Basic panel example
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
